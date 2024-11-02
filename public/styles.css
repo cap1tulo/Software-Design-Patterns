@@ -1,0 +1,167 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title Styling */
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Widget Container Styling */
+.widget-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+}
+
+/* Individual Widget Styling */
+.widget {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30%;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.widget h2 {
+    text-align: center;
+    color: #555;
+}
+
+/* Sub-Widgets Section Styling */
+.sub-widgets {
+    margin-top: 15px;
+    color: #777;
+    font-size: 14px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.sub-widgets p {
+    margin: 0;
+    text-align: center;
+}
+
+/* Button Styling */
+.add-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Form Popup Styling */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ddd;
+    background-color: #fff;
+    padding: 30px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.form-popup h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Label Styling */
+.form-popup label {
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Category Buttons and Sub-Widget Buttons */
+.category-buttons, .sub-widget-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-buttons button, .sub-widget-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+}
+
+/* Input Field Styling */
+.form-popup input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Submit and Cancel Buttons */
+.form-popup .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.form-popup .cancel-btn {
+    background-color: #f44336;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: 10px;
+}
+
+/* Button Group Styling */
+.form-popup .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

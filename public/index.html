@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Expense Tracking System</h1>
+
+<div class="widget-container">
+    <!-- Transport Widget -->
+    <div class="widget">
+        <h2>Transport</h2>
+        <div class="sub-widgets">
+            <p>Taxi - $<span id="taxiAmount">0.0</span></p>
+            <p>Bus - $<span id="busAmount">0.0</span></p>
+            <p>Scooter - $<span id="scooterAmount">0.0</span></p>
+        </div>
+    </div>
+
+    <!-- Food Widget -->
+    <div class="widget">
+        <h2>Food</h2>
+        <div class="sub-widgets">
+            <p>Restaurant - $<span id="restaurantAmount">0.0</span></p>
+            <p>Cafe - $<span id="cafeAmount">0.0</span></p>
+            <p>Home Products - $<span id="homeProductsAmount">0.0</span></p>
+            <p>Orders - $<span id="ordersAmount">0.0</span></p>
+        </div>
+    </div>
+
+    <!-- Personal Spending Widget -->
+    <div class="widget">
+        <h2>Personal Spending</h2>
+        <div class="sub-widgets">
+            <p>Rent Payment - $<span id="rentPaymentAmount">0.0</span></p>
+            <p>Utility Fee - $<span id="utilityFeeAmount">0.0</span></p>
+            <p>Gym - $<span id="gymAmount">0.0</span></p>
+            <p>Self Care - $<span id="selfCareAmount">0.0</span></p>
+        </div>
+    </div>
+</div>
+
+<button class="add-button" onclick="openForm()">Add Data</button>
+
+<!-- Add Expense Form Popup -->
+<div class="form-popup" id="expenseForm">
+    <h3>Add New Expense</h3>
+    <form onsubmit="return submitForm()">
+        <div class="category-buttons">
+            <button type="button" onclick="setCategory('Transport')">Transport</button>
+            <button type="button" onclick="setCategory('Food')">Food</button>
+            <button type="button" onclick="setCategory('Personal Spending')">Personal Spending</button>
+        </div>
+        <input type="hidden" id="selectedCategory" name="category" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+
+        <label for="detail">Detail:</label>
+        <input type="hidden" id="selectedDetail" name="detail" required>
+        <div class="sub-widget-buttons" id="subWidgetContainer"></div>
+
+        <div class="button-group">
+            <button type="button" class="cancel-btn" onclick="closeForm()">Cancel</button>
+        </div>
+
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
