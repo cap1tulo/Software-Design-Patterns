@@ -1,3 +1,4 @@
+// src/view/ExpenseView.java
 package view;
 
 import controller.ExpenseController;
@@ -44,6 +45,5 @@ public class ExpenseView {
         String detail = scanner.nextLine();
 
         controller.addExpense(category, amount, detail);
-        System.out.println("Expense added successfully.");
     }
 }

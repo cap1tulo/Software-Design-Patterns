@@ -1,10 +1,15 @@
+// src/model/SingletonTracker.java
 package model;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SingletonTracker {
     private static SingletonTracker instance;
+    private Map<String, Double> totals;
 
     private SingletonTracker() {
-        // Private constructor to prevent instantiation
+        totals = new HashMap<>();
     }
 
     public static SingletonTracker getInstance() {
@@ -14,13 +19,11 @@ public class SingletonTracker {
         return instance;
     }
 
-    public void addExpense(String category, double amount, String detail) {
-        // Method to add an expense
-        System.out.println("Adding expense: " + category + " - " + amount + " - " + detail);
+    public void addExpense(String detail, double amount) {
+        totals.put(detail, totals.getOrDefault(detail, 0.0) + amount);
     }
 
-    public void viewExpenses() {
-        // Placeholder method to view expenses
-        System.out.println("Viewing all expenses.");
+    public Map<String, Double> getTotals() {
+        return totals;
     }
 }

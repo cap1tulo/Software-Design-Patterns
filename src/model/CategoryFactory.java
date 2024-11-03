@@ -1,18 +1,13 @@
-package model;
-
-import model.categories.*;
+// src/model/categories/CategoryFactory.java
+package model.categories;
 
 public class CategoryFactory {
     public static Category createCategory(String type) {
-        switch (type.toLowerCase()) {
-            case "transport":
-                return new Transport();
-            case "food":
-                return new Food();
-            case "personal spending":
-                return new PersonalSpending();
-            default:
-                throw new IllegalArgumentException("Unknown category type");
-        }
+        return switch (type) {
+            case "Transport" -> new Transport();
+            case "Food" -> new Food();
+            case "Personal Spending" -> new PersonalSpending();
+            default -> throw new IllegalArgumentException("Unknown category type: " + type);
+        };
     }
 }

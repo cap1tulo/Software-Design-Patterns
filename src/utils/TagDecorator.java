@@ -1,18 +1,16 @@
+// src/utils/TagDecorator.java
 package utils;
-
-import model.categories.Category;
 
 public class TagDecorator extends ExpenseDecorator {
     private String tag;
 
-    public TagDecorator(Category decoratedCategory, String tag) {
-        super(decoratedCategory);
+    public TagDecorator(String description, String tag) {
+        super(description);
         this.tag = tag;
     }
 
     @Override
-    public void addExpense(double amount, String detail) {
-        super.addExpense(amount, detail);
-        System.out.println("Tagged with: " + tag);
+    public String getDescription() {
+        return description + " [" + tag + "]";
     }
 }

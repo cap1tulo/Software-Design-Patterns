@@ -1,11 +1,12 @@
 package controller;
 
+import observer.ExpenseSubject;
 import utils.ExpenseFacade;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class ExpenseController {
+public class ExpenseController extends ExpenseSubject {
     private ExpenseFacade facade;
     private Map<String, Double> subWidgetTotals;
 
@@ -32,13 +33,15 @@ public class ExpenseController {
 
         // Update the amount for the selected sub-widget
         subWidgetTotals.put(detail, subWidgetTotals.getOrDefault(detail, 0.0) + amount);
+
+        // Notify all observers of the update
+        notifyObservers(category, detail, amount);
     }
 
     public Map<String, Double> getSubWidgetTotals() {
         return subWidgetTotals;
     }
 
-    // Method to view expenses
     public void viewExpenses() {
         System.out.println("Current Expenses:");
         for (Map.Entry<String, Double> entry : subWidgetTotals.entrySet()) {
